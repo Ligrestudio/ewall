@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'PPneueMontreal';
+  src: url('/fonts/ppneuemontreal-regular.woff2') format('woff2');
+  font-weight: 450;
+  font-style: normal;
+  unicode-range: U+0000-017F, U+02B8-0368, U+2000-20CF, U+2150-217F, U+2190-21BB;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'PPneueMontreal';
+  src: url('/fonts/ppneuemontreal-medium.woff2') format('woff2');
+  font-weight: 530;
+  font-style: medium;
+  unicode-range: U+0000-017F, U+02B8-0368, U+2000-20CF, U+2150-217F, U+2190-21BB;
+  font-display: auto;
+}
