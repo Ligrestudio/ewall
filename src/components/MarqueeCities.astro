@@ -168,13 +168,14 @@ const weatherIcons = {
       {
         ciudades.map((ciudad) => (
           <li>
-            {ciudad.nombre}: {ciudad.temperatura}ºC
+            {ciudad.nombre}{' '}
             <img
-              src={`/icons/${weatherIcons[ciudad.weather_code]}`}
+              src={`/meteo/icons/${weatherIcons[ciudad.weather_code]}`}
               alt=""
               width="20"
               height="20"
-            />
+            />{' '}
+            {ciudad.temperatura}ºC
           </li>
         ))
       }
@@ -183,7 +184,7 @@ const weatherIcons = {
           <li>
             {ciudad.nombre}: {ciudad.temperatura}ºC
             <img
-              src={`/icons/${weatherIcons[ciudad.weather_code]}`}
+              src={`/meteo/icons/${weatherIcons[ciudad.weather_code]}`}
               alt=""
               width="20"
               height="20"
@@ -205,7 +206,7 @@ const weatherIcons = {
   }
   .marquee--text-track {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     animation: marquee-move-text 300s linear infinite;
     list-style: none;
     width: max-content;
