@@ -91,7 +91,6 @@ const ciudadesConCoordenadas = [
   { nombre: 'Ho Chi Minh', lat: 10.8231, lon: 106.6297 },
   { nombre: 'Bogotá', lat: 4.711, lon: -74.0721 },
   { nombre: 'Bucarest', lat: 44.4268, lon: 26.1025 },
-  { nombre: 'Riad', lat: 24.7136, lon: 46.6753 },
   { nombre: 'Casablanca', lat: 33.5731, lon: -7.5898 },
   { nombre: 'El Cairo', lat: 30.0444, lon: 31.2357 },
   { nombre: 'Hanoi', lat: 21.0285, lon: 105.8542 },
@@ -180,13 +179,14 @@ const weatherIcons = {
       {
         ciudades.map((ciudad) => (
           <li>
-            {ciudad.nombre}: {ciudad.temperatura}ºC
+            {ciudad.nombre}{' '}
             <img
               src={`./icons/${weatherIcons[ciudad.weather_code]}`}
               alt=""
               width="20"
               height="20"
-            />
+            />{' '}
+            {ciudad.temperatura}ºC
           </li>
         ))
       }
