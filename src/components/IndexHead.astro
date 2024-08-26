@@ -1,0 +1,41 @@
+---
+import '../styles/reset.css'
+import '../styles/fonts.css'
+import '../styles/vars.css'
+import '../styles/global.css'
+
+//Props
+interface Props {
+  title: string
+  description: string
+}
+const {
+  title = 'Weather info | Tempus',
+  description = 'Weather info | Tempus',
+} = Astro.props
+---
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="title" content={title} />
+
+  <!-- third-party domains that we know for sure will be requested -->
+  <!-- <link rel="preconnect" href="https://www.google-analytics.com" /> -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+
+  <!-- Fonts and pre-loaded links like fonts-->
+
+  <!-- Prefetched Links: logos in the footer, Twitter feeds, videos... -->
+  <!-- <link rel="prefetch" href="jwpplayer.js" /> -->
+
+  <!-- Non-rendered assets: meta tags, manifests, structured data -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="description" content={description} />
+  <meta name="author" content="Tempus" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+</head>
