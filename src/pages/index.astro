@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
 import MarqueeCities from '../components/MarqueeCities.astro'
+import Clock from '../components/Clock.astro'
 ---
 
 <MainLayout
@@ -9,37 +10,12 @@ import MarqueeCities from '../components/MarqueeCities.astro'
   image="/default-image.jpg"
 >
   <MarqueeCities />
+  <Clock />
 </MainLayout>
 
 <style>
   body {
     background-color: #5a5a5a;
     color: #fff;
-  }
-  .marquee--wrapper {
-    padding: 0.625rem 0;
-    background-color: #000;
-  }
-  .marquee--text {
-    overflow: clip;
-  }
-  .marquee--text-track {
-    display: flex;
-    gap: 1rem;
-    animation: marquee-move-text 300s linear infinite;
-    list-style: none;
-    width: max-content;
-    padding-left: 1rem;
-  }
-  .marquee--text-track li {
-    width: max-content;
-  }
-  @keyframes marquee-move-text {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
   }
 </style>

@@ -1,0 +1,123 @@
+---
+
+---
+
+<div class="clock">
+  <div class="hour"></div>
+  <div class="min"></div>
+  <div class="sec"></div>
+</div>
+
+<script>
+  const deg = 6
+  const hour = document.querySelector('.hour') as HTMLElement
+  const min = document.querySelector('.min') as HTMLElement
+  const sec = document.querySelector('.sec') as HTMLElement
+
+  const setClock = () => {
+    let day = new Date()
+    let hh = day.getHours() * 30
+    let mm = day.getMinutes() * deg
+    let ss = day.getSeconds() * deg
+
+    hour.style.transform = `rotateZ(${hh + mm / 12}deg)`
+    min.style.transform = `rotateZ(${mm}deg)`
+    sec.style.transform = `rotateZ(${ss}deg)`
+  }
+
+  // first time
+  setClock()
+  // Update every 1000 ms
+  setInterval(setClock, 1000)
+
+  const switchTheme = (evt: Event) => {
+    const switchBtn = evt.target as HTMLElement
+    if (switchBtn.textContent?.toLowerCase() === 'light') {
+      switchBtn.textContent = 'dark'
+      document.documentElement.setAttribute('data-theme', 'dark')
+    } else {
+      switchBtn.textContent = 'light'
+      document.documentElement.setAttribute('data-theme', 'light')
+    }
+  }
+
+  const switchModeBtn = document.querySelector('.switch-btn')
+  switchModeBtn?.addEventListener('click', switchTheme, false)
+
+  let currentTheme = 'dark'
+
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme)
+    if (switchModeBtn instanceof HTMLElement) {
+      switchModeBtn.textContent = currentTheme
+    }
+  }
+</script>
+
+<style>
+  .clock {
+    height: 18em;
+    width: 18em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    background-image: url('../../public/clock-background.svg');
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+    transition: all ease 0.2s;
+  }
+  .clock:before {
+    content: '';
+    height: 0.75rem;
+    width: 0.75rem;
+    background-color: #f00;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1000;
+    transition: all ease 0.2s;
+  }
+  .hour,
+  .min,
+  .sec {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .hour {
+    height: 10em;
+    width: 10em;
+  }
+  .hour:before {
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 6px;
+    background-color: #fff;
+    border-radius: 6px;
+  }
+  .min {
+    height: 12em;
+    width: 12em;
+  }
+  .min:before {
+    content: '';
+    height: 50%;
+    width: 4px;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+  .sec {
+    height: 13em;
+    width: 13em;
+  }
+  .sec:before {
+    content: '';
+    height: 60%;
+    width: 2px;
+    background-color: #f00;
+    border-radius: 2px;
+  }
+</style>
