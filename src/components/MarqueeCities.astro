@@ -197,7 +197,7 @@ const weatherIcons = {
 <style>
   .marquee--wrapper {
     padding: 0.625rem 0;
-    background-color: #000;
+    background-color: #fff;
   }
   .marquee--text {
     overflow: clip;
@@ -215,10 +215,11 @@ const weatherIcons = {
     width: max-content;
     gap: 0.25rem;
     font-size: .7862rem;
+    color: #1841eb;
   }
 
   .marquee--text-track li img {
-    filter: invert(1);
+    filter: invert(17%) sepia(98%) saturate(7203%) hue-rotate(236deg) brightness(96%) contrast(91%);
   }
 
   @keyframes marquee-move-text {
