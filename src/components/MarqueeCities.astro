@@ -120,7 +120,7 @@ const data = await response.json()
 // Asociar los nombres de las ciudades con sus respectivas temperaturas
 const ciudades = data.map((ciudad, index) => ({
   nombre: ciudadesConCoordenadas[index].nombre,
-  temperatura: Math.round(ciudad.current.temperature_2m),
+  temperatura: ciudad.current.temperature_2m,
   weather_code: ciudad.current.weather_code,
 }))
 
